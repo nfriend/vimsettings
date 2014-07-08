@@ -30,19 +30,19 @@ set softtabstop=4
 " Ignore case when searching
 set ignorecase
 
-" Add custom dictionarys for autocomplete.
+" Add custom dictionaries for autocomplete.
 set dictionary+=E:/Documents/GitHub/vimsettings/c-sharp.dictionary 
 set dictionary+=E:/Documents/GitHub/vimsettings/html.dictionary 
 set dictionary+=E:/Documents/GitHub/vimsettings/javascript.dictionary
 " Add these dictionaries as source for the default autocomplete (using Ctrl+P)
 set complete=.,w,b,u,t,i,k
 
-" NERDTree settings
+" NERDTree settings {{{1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F2> :NERDTreeToggle<CR>
 map <Leader>nt :NERDTree %:p:h<CR>
 let g:NERDTreeWinPos = "right"
-" /NERDTree settings
+" NERDTree settings }}}1
 
 " Use the currently open file's path as Vim's working directory
 autocmd BufEnter * lcd %:p:h
@@ -55,3 +55,5 @@ set backspace=indent,eol,start
 
 " Make copy and paste use the system's clipboard by default
 set clipboard=unnamed
+
+" vim: set fdm=marker:
