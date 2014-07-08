@@ -31,7 +31,9 @@ set softtabstop=4
 set ignorecase
 
 " Add custom dictionarys for autocomplete.
-set dictionary=E:/Google\ Drive/Vim/c-sharp.dictionary,E:/Google\ Drive/Vim/html.dictionary,E:/Google\ Drive/Vim/javascript.dictionary
+set dictionary+=E:/Documents/GitHub/vimsettings/c-sharp.dictionary 
+set dictionary+=E:/Documents/GitHub/vimsettings/html.dictionary 
+set dictionary+=E:/Documents/GitHub/vimsettings/javascript.dictionary
 " Add these dictionaries as source for the default autocomplete (using Ctrl+P)
 set complete=.,w,b,u,t,i,k
 
