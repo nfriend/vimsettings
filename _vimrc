@@ -29,13 +29,18 @@ set softtabstop=4
 
 " Ignore case when searching
 set ignorecase
+" unless we've included a capital letter in our search expression
+set smartcase
 
 " Add custom dictionaries for autocomplete.
-set dictionary+=E:/Documents/GitHub/vimsettings/c-sharp.dictionary 
-set dictionary+=E:/Documents/GitHub/vimsettings/html.dictionary 
-set dictionary+=E:/Documents/GitHub/vimsettings/javascript.dictionary
+set dictionary+=C:/vimsettings/c-sharp.dictionary 
+set dictionary+=C:/vimsettings/html.dictionary 
+set dictionary+=C:/vimsettings/javascript.dictionary
 " Add these dictionaries as source for the default autocomplete (using Ctrl+P)
 set complete=.,w,b,u,t,i,k
+
+" Enable filetype plugins
+:filetype plugin on
 
 " NERDTree settings {{{1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -55,5 +60,24 @@ set backspace=indent,eol,start
 
 " Make copy and paste use the system's clipboard by default
 set clipboard=unnamed
+
+" Keep a longer history of commands
+set history=1000
+
+" Enable the matchit plugin that comes bundled with the Vim installation
+runtime macros/matchit.vim
+
+" Maintain more context around the cursor
+set scrolloff=6
+
+" Toggle whitespace visibility with \ + s
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
+" Alias kj to <Esc>
+:imap kj <Esc>
+
+" Set the default timeout smaller
+set timeoutlen=200
 
 " vim: set fdm=marker:
