@@ -92,7 +92,7 @@ inoremap <C-BS> <C-W>
 " Allow Ctrl+Delete to act like Windows - doesn't quite work properly
 inoremap <C-Del> <C-O>dw
 
-" Toggle whitespace visibility with \ + s
+" Toggle whitespace visibility with <leader> + s
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
