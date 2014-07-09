@@ -33,9 +33,9 @@ set ignorecase
 set smartcase
 
 " Add custom dictionaries for autocomplete.
-set dictionary+=C:/vimsettings/c-sharp.dictionary 
-set dictionary+=C:/vimsettings/html.dictionary 
-set dictionary+=C:/vimsettings/javascript.dictionary
+set dictionary+=$HOME/vimfiles/c-sharp.dictionary 
+set dictionary+=$HOME/vimfiles/html.dictionary 
+set dictionary+=$HOME/vimfiles/javascript.dictionary
 " Add these dictionaries as source for the default autocomplete (using Ctrl+P)
 set complete=.,w,b,u,t,i,k
 
