@@ -52,9 +52,6 @@ let g:NERDTreeWinPos = "right"
 " Use the currently open file's path as Vim's working directory
 autocmd BufEnter * lcd %:p:h
 
-" Map Ctrl+r to search and replace the currently selected text
-vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
-
 " Make backspace work in VsVim
 set backspace=indent,eol,start
 
@@ -70,14 +67,45 @@ runtime macros/matchit.vim
 " Maintain more context around the cursor
 set scrolloff=6
 
+" Set the default timeout smaller
+set timeoutlen=500
+
+" Remaps {{{1
+
+" Set <leader> to <space>
+let mapleader = " "
+
+" Set <localleader> to \ 
+let maplocalleader = "\\"
+
+" Automatically edit this file with <leader> + ev
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" Reapply everything in my _vimrc without having to exit and reload.
+" Note that this won't CLEAR any settings.  It will only replace/add settings
+" to the previous configuration.
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Allow Ctrl+Backspace to act like Windows
+inoremap <C-BS> <C-W>
+
+" Allow Ctrl+Delete to act like Windows - doesn't quite work properly
+inoremap <C-Del> <C-O>dw
+
 " Toggle whitespace visibility with \ + s
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Alias kj to <Esc>
-:imap kj <Esc>
+:inoremap kj <Esc>
 
-" Set the default timeout smaller
-set timeoutlen=200
+" Map Ctrl+r to search and replace the currently selected text
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+
+" Remaps }}}1
+
+" Abbreviations {{{1
+iabbrev @@ contact@nathanfriend.com
+" Abbreviations }}}1
 
 " vim: set fdm=marker:
