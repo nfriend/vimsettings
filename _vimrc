@@ -49,6 +49,17 @@ map <Leader>nt :NERDTree %:p:h<CR>
 let g:NERDTreeWinPos = "right"
 " NERDTree settings }}}1
 
+" NERDCommenter Settings {{{1
+let NERDCommentWholeLinesInVMode=1
+
+" Map NERDCommenter shortcuts to feel like Visual Studio
+" nnoremap <leader>ec :call NERDComment(0, "comment")<cr>
+nnoremap <leader>ec :call NERDComment(0, "comment")<cr>
+vnoremap <leader>ec :call NERDComment(0, "comment")<cr>
+nnoremap <leader>eu :call NERDComment(0, "uncomment")<cr>
+vnoremap <leader>eu :call NERDComment(0, "uncomment")<cr>
+" NERDCommenter Settings }}}1
+
 " Use the currently open file's path as Vim's working directory
 autocmd BufEnter * lcd %:p:h
 
@@ -107,5 +118,15 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 " Abbreviations {{{1
 iabbrev @@ contact@nathanfriend.com
 " Abbreviations }}}1
+
+" Disable arrow keys for learning purposes
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <down> <nop>
+inoremap <up> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <down> <nop>
+nnoremap <up> <nop>
 
 " vim: set fdm=marker:
