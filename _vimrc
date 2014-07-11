@@ -70,6 +70,12 @@ set scrolloff=6
 " Set the default timeout smaller
 set timeoutlen=500
 
+" Make formatting XML files work better
+augroup xml_format
+    autocmd!
+    autocmd FileType xml :setlocal equalprg=xmllint\ --format\ -
+augroup END 
+
 " Basic settings }}}1
 
 " Autocomplete settings {{{1
@@ -114,6 +120,9 @@ nmap <silent> <leader>s :set nolist!<CR>
 
 " Map Ctrl+r to search and replace the currently selected text
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+
+" Format the whole file with the Visual Studio shortcut, Ctrl + E + D
+nnoremap <leader>ed mygg=G`y
 
 " Remaps }}}1
 
