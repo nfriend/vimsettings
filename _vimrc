@@ -124,6 +124,14 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 " Format the whole file with the Visual Studio shortcut, Ctrl + E + D
 nnoremap <leader>ed mygg=G`y
 
+" Import remapping definitions that augement the default behavior 
+" of f, F, t, and T.
+" Accomplished this way to maintain compatibility with VsVim
+source ~\vimfiles\lowercase-f-remap.vim
+source ~\vimfiles\uppercase-F-remap.vim
+source ~\vimfiles\lowercase-t-remap.vim
+source ~\vimfiles\uppercase-T-remap.vim
+
 " Remaps }}}1
 
 " Abbreviations {{{1
@@ -182,6 +190,8 @@ iabbrev randomstuff Here is some random text for you. It has letters, numb3rs an
 \<CR>       Sometimes it is helpful to test things on repeated lines.
 \<CR>       Sometimes it is helpful to test things on repeated lines.
 \<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>
+\<CR>       \\\\ \\ \|\|\| \| ??? ? /// / 
 \<CR>
 \<CR>
 "}}}2
