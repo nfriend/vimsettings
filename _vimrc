@@ -126,10 +126,65 @@ nnoremap <leader>ed mygg=G`y
 
 " Remaps }}}1
 
-" Abbreviations {{{1za
+" Abbreviations {{{1
 iabbrev @@ contact@nathanfriend.com
 
 iabbrev lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+" Some random text, useful for testing while working on Vim stuff {{{2
+iabbrev randomstuff Here is some random text for you. It has letters, numb3rs and punctuation!  And also line breaks.
+\<CR>This here is the second line.
+\<CR>
+\<CR>1. Here is a numbered list.
+\<CR>2. Here's the second item in this numbered list.
+\<CR>3. The third item.
+\<CR>4. The fourth
+\<CR>
+\<CR>// A block of code:
+\<CR>foreach(var item in items)
+\<CR>{
+\<CR>   int itemIndex = items.IndexOf(item);
+\<CR>   var parent = _fetchFromCache(item.Parent);
+\<CR>   
+\<CR>   if (parent == null)
+\<CR>   {
+\<CR>       Console.WriteLine("What does this code even do???");
+\<CR>       throw new ParentNotFoundInCacheException("Stuff is really broken.");
+\<CR>   }
+\<CR>   
+\<CR>   item.OnParentCached += new OnParentCachedHandler((parent) =>
+\<CR>   {
+\<CR>       Task.Run(async () =>
+\<CR>       {
+\<CR>           await item.BeginAsyncInit(parent); 
+\<CR>       }
+\<CR>   }
+\<CR>}
+\<CR>
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>       Sometimes it is helpful to test things on repeated lines.
+\<CR>
+\<CR>
+"}}}2
 
 " timestamp abbreviation, i.e. 2014/07/10 10:34:33 PM 
 iabbrev <expr> dts strftime("%Y/%m/%d %X")
