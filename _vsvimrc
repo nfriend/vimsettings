@@ -1,1 +1,6 @@
+" Import my standard _vimrc settings {{{1
 :source ~\_vimrc
+" Import my standard _vimrc settings }}}1
+
+" VsVim-specific settings {{{1
+" VsVim-specific settings }}}1
