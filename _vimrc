@@ -21,13 +21,13 @@ set guioptions=egmrLt
 
 " Persist code folding across Vim sessions
 " I don't think this is working yet.
-augroup codefolding
-    autocmd!
-    autocmd BufWinLeave .* mkview
-    autocmd BufWinEnter .* silent loadview
-    autocmd BufWinLeave _vimrc mkview
-    autocmd BufWinEnter _vimrc silent loadview
-augroup END
+"augroup codefolding
+    "autocmd!
+    "autocmd BufWinLeave .* mkview
+    "autocmd BufWinEnter .* silent loadview
+    "autocmd BufWinLeave _vimrc mkview
+    "autocmd BufWinEnter _vimrc silent loadview
+"augroup END
 " Visual settings }}}1
 
 " Basic settings {{{1
@@ -68,7 +68,7 @@ runtime macros/matchit.vim
 set scrolloff=6
 
 " Set the default timeout smaller
-set timeoutlen=500
+set timeoutlen=1000
 
 " Make formatting XML files work better
 augroup xml_format
@@ -127,10 +127,14 @@ nnoremap <leader>ed mygg=G`y
 " Import remapping definitions that augement the default behavior 
 " of f, F, t, and T.
 " Accomplished this way to maintain compatibility with VsVim
-source ~\vimfiles\lowercase-f-remap.vim
-source ~\vimfiles\uppercase-F-remap.vim
-source ~\vimfiles\lowercase-t-remap.vim
-source ~\vimfiles\uppercase-T-remap.vim
+"source ~\vimfiles\lowercase-f-remap.vim
+"source ~\vimfiles\uppercase-F-remap.vim
+"source ~\vimfiles\lowercase-t-remap.vim
+"source ~\vimfiles\uppercase-T-remap.vim
+
+" Remap ; to n and , to N, in order to compliment the remaps above
+"nnoremap ; n
+"nnoremap , N
 
 " Remaps }}}1
 

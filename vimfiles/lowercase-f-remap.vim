@@ -26,9 +26,9 @@ nnoremap fw /w<CR>
 nnoremap fx /x<CR>
 nnoremap fy /y<CR>
 nnoremap fz /z<CR>
-"" Lowercase letters }}}1
+" Lowercase letters }}}1
 
-"" Uppercase letters {{{1
+" Uppercase letters {{{1
 nnoremap fA /A<CR>
 nnoremap fB /B<CR>
 nnoremap fC /C<CR>
@@ -56,53 +56,52 @@ nnoremap fW /W<CR>
 nnoremap fX /X<CR>
 nnoremap fY /Y<CR>
 nnoremap fZ /Z<CR>
-"" Uppercase letters }}}1
+" Uppercase letters }}}1
 
-"" Numbers {{{1
-"nnoremap f1 /1<CR>
-"nnoremap f2 /2<CR>
-"nnoremap f3 /3<CR>
-"nnoremap f4 /4<CR>
-"nnoremap f5 /5<CR>
-"nnoremap f6 /6<CR>
-"nnoremap f7 /7<CR>
-"nnoremap f8 /8<CR>
-"nnoremap f9 /9<CR>
-"nnoremap f0 /0<CR>
+" Numbers {{{1
+nnoremap f1 /1<cr>
+nnoremap f2 /2<cr>
+nnoremap f3 /3<cr>
+nnoremap f4 /4<cr>
+nnoremap f5 /5<cr>
+nnoremap f6 /6<cr>
+nnoremap f7 /7<cr>
+nnoremap f8 /8<cr>
+nnoremap f9 /9<cr>
+nnoremap f0 /0<cr>
 " Numbers }}}1
 
 " Symbols {{{1
-"nnoremap f~ /~<CR>
-"nnoremap f` /`<CR>
-"nnoremap f! /!<CR>
-"nnoremap f@ /@<CR>
-"nnoremap f# /#<CR>
-"nnoremap f$ /$<CR>
-"nnoremap f% /%<CR>
-"nnoremap f^ /^<CR>
-"nnoremap f& /&<CR>
-"nnoremap f* /*<CR>
-"nnoremap f( /(<CR>
-"nnoremap f) /)<CR>
-"nnoremap f- /-<CR>
-"nnoremap f_ /_<CR>
-"nnoremap f+ /+<CR>
-"nnoremap f= /=<CR>
-"nnoremap f{ /{<CR>
-"nnoremap f[ /[<CR>
-"nnoremap f} /}<CR>
-"nnoremap f] /]<CR>
-""nnoremap f\ /\<CR>
-""nnoremap f\| /\|<CR>
-"nnoremap f: /:<CR>
-"nnoremap f; /;<CR>
-"nnoremap f" /"<CR>
-"nnoremap f' /'<CR>
-"nnoremap f< /<<CR>
-"nnoremap f, /,<CR>
-"nnoremap f> /><CR>
-"nnoremap f. /.<CR>
-"nnoremap f? /?<CR>
-"nnoremap f/ /\/<CR>
+nnoremap f~ /~<CR>
+nnoremap f` /`<CR>
+nnoremap f! /!<CR>
+nnoremap f@ /@<CR>
+nnoremap f# /#<CR>
+nnoremap f$ /$<CR>
+nnoremap f% /%<CR>
+nnoremap f^ /^<CR>
+nnoremap f& /&<CR>
+nnoremap f* /*<CR>
+nnoremap f( /(<CR>
+nnoremap f) /)<CR>
+nnoremap f- /-<CR>
+nnoremap f_ /_<CR>
+nnoremap f+ /+<CR>
+nnoremap f= /=<CR>
+nnoremap f{ /{<CR>
+nnoremap f[ /[<CR>
+nnoremap f} /}<CR>
+nnoremap f] /]<CR>
+nnoremap f\ /\<CR>
+nnoremap f\| /\|<CR>
+nnoremap f: /:<CR>
+nnoremap f; /;<CR>
+nnoremap f" /"<CR>
+nnoremap f' /'<CR>
+nnoremap f< /<<CR>
+nnoremap f, /,<CR>
+nnoremap f> /><CR>
+nnoremap f. /.<CR>
+nnoremap f? /?<CR>
+nnoremap f/ /\/<CR>
 " Symbols }}}1
-
