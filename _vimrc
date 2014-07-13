@@ -124,18 +124,6 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 " Format the whole file with the Visual Studio shortcut, Ctrl + E + D
 nnoremap <leader>ed mygg=G`y
 
-" Import remapping definitions that augement the default behavior 
-" of f, F, t, and T.
-" Accomplished this way to maintain compatibility with VsVim
-"source ~\vimfiles\lowercase-f-remap.vim
-"source ~\vimfiles\uppercase-F-remap.vim
-"source ~\vimfiles\lowercase-t-remap.vim
-"source ~\vimfiles\uppercase-T-remap.vim
-
-" Remap ; to n and , to N, in order to compliment the remaps above
-"nnoremap ; n
-"nnoremap , N
-
 " Remaps }}}1
 
 " Abbreviations {{{1
