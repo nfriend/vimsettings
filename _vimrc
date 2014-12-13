@@ -195,14 +195,14 @@ iabbrev <expr> dts strftime("%Y/%m/%d %X")
 
 " Learning aids {{{1
 
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <down> <nop>
-inoremap <up> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <down> <nop>
-nnoremap <up> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"inoremap <down> <nop>
+"inoremap <up> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"nnoremap <down> <nop>
+"nnoremap <up> <nop>
 
 " Learning aids }}}1
 
