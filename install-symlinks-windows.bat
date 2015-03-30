@@ -32,20 +32,20 @@ if '%errorlevel%' NEQ '0' (
 
 :: symlink relevant directories and files into the user's home directory
 
-if exist %homepath%\.vim ( rmdir %homepath%\.vim )
-echo junction symlinking .vim directory to %homepath%\.vim...
-mklink /J %homepath%\.vim .vim
+if exist %userprofile%\.vim ( rmdir %userprofile%\.vim )
+echo junction symlinking .vim directory to %userprofile%\.vim...
+mklink /J %userprofile%\.vim .vim
 
-if exist %homepath%\_vimrc ( del %homepath%\_vimrc )
-echo hard symlinking _vimrc to %homepath%\_vimrc...
-mklink /H %homepath%\_vimrc _vimrc
+if exist %userprofile%\_vimrc ( del %userprofile%\_vimrc )
+echo hard symlinking _vimrc to %userprofile%\_vimrc...
+mklink /H %userprofile%\_vimrc _vimrc
 
-if exist %homepath%\_vsvimrc ( del %homepath%\_vsvimrc )
-echo hard symlinking _vsvimrc to %homepath%\_vsvimrc...
-mklink /H %homepath%\_vsvimrc _vsvimrc 
+if exist %userprofile%\_vsvimrc ( del %userprofile%\_vsvimrc )
+echo hard symlinking _vsvimrc to %userprofile%\_vsvimrc...
+mklink /H %userprofile%\_vsvimrc _vsvimrc 
 
-if exist %homepath%\xmllint.exe ( del %homepath%\xmllint.exe )
-echo hard symlinking xmllint.exe to %homepath%\_vsvimrc ...
-mklink /H %homepath%\xmllint.exe xmllint.exe
+if exist %userprofile%\xmllint.exe ( del %userprofile%\xmllint.exe )
+echo hard symlinking xmllint.exe to %userprofile%\_vsvimrc ...
+mklink /H %userprofile%\xmllint.exe xmllint.exe
 
 
