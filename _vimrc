@@ -2,7 +2,7 @@
 " across (heterogeneous) systems easier.
 " from http://vim.wikia.com/wiki/Synchronize_configuration_to_many_computers
 if has('win32') || has('win64')
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
 " Pathogen plugin installer setup
@@ -39,8 +39,10 @@ set guioptions=egmrLt
 
 " Basic settings {{{1
 " This is where the .swp and ~ files will be saved, so we don't have to look at them
-set backupdir=C:/temp
-set directory=C:/temp
+if has('win32') || has('win64')
+    set backupdir=C:/temp
+    set directory=C:/temp
+endif
 
 " Automatically convert tabs into space, and set tab sizes
 set expandtab
