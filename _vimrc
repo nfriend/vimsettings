@@ -1,3 +1,10 @@
+" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+" across (heterogeneous) systems easier.
+" from http://vim.wikia.com/wiki/Synchronize_configuration_to_many_computers
+if has('win32') || has('win64')
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
 " Pathogen plugin installer setup
 execute pathogen#infect()
 
@@ -40,6 +47,14 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+" Indentation
+set autoindent
+set cindent
+
+" Make Shift + Tab act like an inverse tab
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
 
 " Ignore case when searching
 set ignorecase
