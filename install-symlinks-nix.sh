@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -f ~/.vim
-ln -s .vim ~/.vim
+rm -rf ~/.vim
+ln -s "$(pwd)/.vim" ~/.vim
 
 rm -f ~/_vimrc
-ln -s _vimrc ~/_vimrc
+ln -s "$(pwd)/_vimrc" ~/_vimrc
