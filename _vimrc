@@ -20,11 +20,10 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" Set the font to size 11 Consolas
-set guifont=Consolas:h11
-
-" Hide the toolbar from the GUI
-set guioptions=egmrLt
+" Set the font to size 11 Consolas, if on Windows
+if has('win32') || has('win64')
+     set guifont=Consolas:h11
+ endif
 
 " Persist code folding across Vim sessions
 " I don't think this is working yet.
@@ -35,7 +34,47 @@ set guioptions=egmrLt
     "autocmd BufWinLeave _vimrc mkview
     "autocmd BufWinEnter _vimrc silent loadview
 "augroup END
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
 " Visual settings }}}1
+
+" Remaps {{{1
+
+" Set <leader> to <space>
+let mapleader = " "
+
+" Set <localleader> to \ 
+let maplocalleader = "\\"
+
+" Automatically edit this file with <leader> + ev
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" Reapply everything in my _vimrc without having to exit and reload.
+" Note that this won't CLEAR any settings.  It will only replace/add settings
+" to the previous configuration.
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Allow Ctrl+Backspace to act like Windows
+inoremap <C-BS> <C-W>
+
+" Allow Ctrl+Delete to act like Windows - doesn't quite work properly
+inoremap <C-Del> <C-O>dw
+
+" Toggle whitespace visibility with <leader> + s
+set listchars=tab:>-,trail:ï¿½,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
+" Map Ctrl+r to search and replace the currently selected text
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
+
+" Format the whole file with the Visual Studio shortcut, Ctrl + E + D
+nnoremap <leader>ed mygg=G`y
+
+" Remaps }}}1
 
 " Basic settings {{{1
 " This is where the .swp and ~ files will be saved, so we don't have to look at them
@@ -66,15 +105,6 @@ set smartcase
 " Enable filetype plugins
 :filetype plugin on
 
-" Use the currently open file's path as Vim's working directory
-" autocmd BufEnter * lcd %:p:h
-
-" Make backspace work in VsVim
-set backspace=indent,eol,start
-
-" Make copy and paste use the system's clipboard by default
-set clipboard=unnamed
-
 " Keep a longer history of commands
 set history=1000
 
@@ -87,11 +117,37 @@ set scrolloff=6
 " Set the default timeout smaller
 set timeoutlen=1000
 
-" Make formatting XML files work better
-augroup xml_format
-    autocmd!
-    autocmd FileType xml :setlocal equalprg=xmllint\ --format\ -
-augroup END 
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Turn on the WiLd menu
+set wildmenu
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch 
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+" Return to last edit position when opening files (You want this!)
+ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Basic settings }}}1
 
@@ -104,44 +160,7 @@ set dictionary+=$HOME/vimfiles/javascript.dictionary
 " Add these dictionaries as source for the default autocomplete (using Ctrl+P)
 set complete=.,w,b,u,t,i,k
 
-" Autocomplete settings }}}1
-
-" Remaps {{{1
-
-" Set <leader> to <space>
-let mapleader = " "
-
-" Set <localleader> to \ 
-let maplocalleader = "\\"
-
-" Automatically edit this file with <leader> + ev
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
-" Reapply everything in my _vimrc without having to exit and reload.
-" Note that this won't CLEAR any settings.  It will only replace/add settings
-" to the previous configuration.
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Allow Ctrl+Backspace to act like Windows
-inoremap <C-BS> <C-W>
-
-" Allow Ctrl+Delete to act like Windows - doesn't quite work properly
-inoremap <C-Del> <C-O>dw
-
-" Toggle whitespace visibility with <leader> + s
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
-
-" Alias kj to <Esc>
-:inoremap kj <Esc>
-
-" Map Ctrl+r to search and replace the currently selected text
-vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
-
-" Format the whole file with the Visual Studio shortcut, Ctrl + E + D
-nnoremap <leader>ed mygg=G`y
-
-" Remaps }}}1
+" Autocomplete settings }}}
 
 " Abbreviations {{{1
 iabbrev @@ contact@nathanfriend.com
@@ -210,19 +229,6 @@ iabbrev <expr> dts strftime("%Y/%m/%d %X")
 
 " Abbreviations }}}1
 
-" Learning aids {{{1
-
-"inoremap <left> <nop>
-"inoremap <right> <nop>
-"inoremap <down> <nop>
-"inoremap <up> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-"nnoremap <down> <nop>
-"nnoremap <up> <nop>
-
-" Learning aids }}}1
-
 " Vimscript filetype settings {{{1
 augroup filetype_vim
     autocmd!
@@ -241,7 +247,12 @@ nnoremap <leader>ec :call NERDComment(0, "comment")<cr>
 vnoremap <leader>ec :call NERDComment(0, "comment")<cr>
 nnoremap <leader>eu :call NERDComment(0, "uncomment")<cr>
 vnoremap <leader>eu :call NERDComment(0, "uncomment")<cr>
+
+" Map Ctrl + / to toggle comments
+nnoremap <C-_> :call NERDComment(0, "toggle")<cr>
+vnoremap <C-_> :call NERDComment(0, "toggle")<cr>
 " NERDCommenter Settings }}}2
+
 
 " NERDTree settings {{{2
 augroup NERDTreeAugroup
