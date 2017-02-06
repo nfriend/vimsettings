@@ -39,13 +39,3 @@ mklink /J %userprofile%\.vim .vim
 if exist %userprofile%\_vimrc ( del %userprofile%\_vimrc )
 echo hard symlinking _vimrc to %userprofile%\_vimrc...
 mklink /H %userprofile%\_vimrc _vimrc
-
-if exist %userprofile%\_vsvimrc ( del %userprofile%\_vsvimrc )
-echo hard symlinking _vsvimrc to %userprofile%\_vsvimrc...
-mklink /H %userprofile%\_vsvimrc _vsvimrc 
-
-if exist %userprofile%\xmllint.exe ( del %userprofile%\xmllint.exe )
-echo hard symlinking xmllint.exe to %userprofile%\_vsvimrc ...
-mklink /H %userprofile%\xmllint.exe xmllint.exe
-
-

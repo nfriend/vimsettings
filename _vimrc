@@ -8,6 +8,10 @@ endif
 " Pathogen plugin installer setup
 execute pathogen#infect()
 
+" Make Vim behave like Windows
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
 " Visual settings {{{1
 
 " Show line numbers
@@ -65,7 +69,7 @@ inoremap <C-BS> <C-W>
 inoremap <C-Del> <C-O>dw
 
 " Toggle whitespace visibility with <leader> + s
-set listchars=tab:>-,trail:�,eol:$
+set listchars=tab:>-,trail:~,eol:$,extends:>,precedes:<
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Map Ctrl+r to search and replace the currently selected text
